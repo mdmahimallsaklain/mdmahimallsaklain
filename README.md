@@ -3,7 +3,7 @@
 ![Portfolio Preview](https://www.mdmahimallsaklain.vercel.app/preview.png)
 
 ## 🌐 Live Website
-🔗 **[Visit My Portfolio](https://www.mdmahimallsaklain.vercel.app/)**
+🔗 **[Visit My Portfolio](https://mdmahimallsaklain.vercel.app/)**
 
 ---
 
