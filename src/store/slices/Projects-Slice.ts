@@ -66,6 +66,7 @@ const ProjectSlice = createSlice({
       .addCase(fetchData.fulfilled, (state, action) => {
         state.loading = false;
         state.data = action.payload;
+        console.log(action.payload)
         if (!action.payload.data || action.payload.data.length === 0) {
           state.error = "No data found!";
         }

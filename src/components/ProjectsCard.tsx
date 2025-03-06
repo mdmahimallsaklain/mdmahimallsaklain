@@ -26,6 +26,14 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   project,
   index,
 }): ReactNode => {
+  const {
+    title,
+    description,
+    images,
+    github_code,
+    live_demo,
+    technologies,
+  } = project;
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -36,8 +44,8 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         <div className='relative overflow-hidden'>
           <div className='absolute inset-0 z-10 bg-gradient-to-t from-based/80 to-based/0 dark:from-background/80 dark:to-background/0 transition-opacity group-hover:opacity-0' />
           <Image
-            src={project.images[0]}
-            alt={project.title}
+            src={images[0]}
+            alt={title}
             width={400}
             height={200}
             className='h-48 w-full object-cover transition-transform duration-500 group-hover:scale-110'
@@ -45,15 +53,15 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         </div>
         <CardHeader>
           <CardTitle className='text-xl font-semibold line-clamp-1'>
-            {project.title}
+            {title}
           </CardTitle>
           <CardDescription className='line-clamp-2'>
-            {project.description}
+            {description}
           </CardDescription>
         </CardHeader>
         <CardContent>
           <div className='flex flex-wrap gap-2'>
-            {project.technologies.map((tech) => (
+            {technologies.map((tech) => (
               <Badge
                 key={tech}
                 variant='secondary'
@@ -67,7 +75,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         <CardFooter className='gap-2'>
           <Button asChild variant='default' size='sm' className='gap-2'>
             <Link
-              href={project.live_demo}
+              href={live_demo}
               target='_blank'
               rel='noopener noreferrer'
             >
@@ -77,7 +85,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
           </Button>
           <Button asChild variant='outline' size='sm' className='gap-2'>
             <Link
-              href={project.github_code}
+              href={github_code}
               target='_blank'
               rel='noopener noreferrer'
             >

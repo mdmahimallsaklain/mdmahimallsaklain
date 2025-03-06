@@ -1,4 +1,4 @@
-'use client';
+"use client";
 import React, { useState } from "react";
 import { SectionTop } from "@/components/SectionTop";
 import { SectionBottom } from "@/components/SectionBottom";
@@ -43,42 +43,44 @@ const FeaturedProjects: React.FC = () => {
   }
 
   return (
-    <section ref={ref} className="my-16">
+    <section ref={ref} className='my-16'>
       <SectionTop
-        title="Featured Projects"
-        description="A collection of my recent work and side projects"
+        title='Featured Projects'
+        description='A collection of my recent work and side projects'
       />
 
       {error.length > 0 && <DataFetchError error={error} />}
 
       {!error && (
-        <div className="flex flex-col sm:grid sm:grid-cols-2 lg:grid-cols-3 sm:grid-rows-1 sm:px-[10%] px-[8%] gap-5 relative">
+        <div className='flex flex-col sm:grid sm:grid-cols-2 lg:grid-cols-3 sm:grid-rows-1 sm:px-[10%] px-[8%] gap-5 relative'>
           <Image
             className={`${
               loading ? "opacity-0" : "opacity-50"
             } hidden sm:inline-block absolute inset-0 -mt-8 ml-16`}
             width={150}
             height={150}
-            src="/assets/dots.svg"
-            alt="dots"
+            src='/assets/dots.svg'
+            alt='dots'
           />
 
-          {loading ? (
-            [...Array(3)].map((_, index) => (
-              <Skeleton
-                key={index}
-                className="block relative w-full h-52 rounded-md"
-              />
-            ))
-          ) : (
-            data?.map((project, index) => (
-              <ProjectCard key={project.title} project={project} index={index} />
-            ))
-          )}
+          {loading
+            ? [...Array(3)].map((_, index) => (
+                <Skeleton
+                  key={index}
+                  className='block relative w-full h-52 rounded-md'
+                />
+              ))
+            : data?.map((project, index) => (
+                <ProjectCard
+                  key={project.title}
+                  project={project}
+                  index={index}
+                />
+              ))}
         </div>
       )}
 
-      <SectionBottom link="projects" />
+      <SectionBottom link='projects' />
     </section>
   );
 };
