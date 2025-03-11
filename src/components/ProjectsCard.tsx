@@ -48,6 +48,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
             alt={title}
             width={400}
             height={200}
+            priority={true}
             className='h-48 w-full object-cover transition-transform duration-500 group-hover:scale-110'
           />
         </div>
